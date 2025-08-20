@@ -204,3 +204,61 @@ Add a simple router (React Router), placeholder pages, and start wiring componen
 - [ ] **5. Manual Review** — verify presence of core files and completeness
 
 Happy building! ✨
+## Team Roles
+
+- **Backend Developer**: Builds and maintains the server-side logic, APIs, and database interactions.
+- **Database Administrator (DBA)**: Designs and manages the database structure, ensures data integrity and performance.
+- **Frontend Developer**: Implements UI components, consumes backend APIs.
+- **QA / Tester**: Writes test cases, verifies that backend and frontend work as expected.
+- **DevOps Engineer**: Manages deployment, CI/CD pipelines, and infrastructure.
+- **Product Owner**: Defines requirements, prioritizes features.
+- **Scrum Master**: Facilitates team workflow and removes blockers.
+
+## Technology Stack
+
+- **Django**: Backend web framework for building RESTful APIs.
+- **PostgreSQL / MySQL**: Relational database to store users, bookings, properties, etc.
+- **GraphQL / REST API**: Interface for frontend to fetch and mutate data securely.
+- **Docker**: Containerization for consistent development and deployment environments.
+- **GitHub Actions**: CI/CD automation for testing and deployment.
+
+## Database Design
+
+**Entities and Key Fields:**
+
+- **User**: id, name, email, password, role
+- **Property**: id, title, location, price, owner_id
+- **Booking**: id, user_id, property_id, start_date, end_date
+- **Review**: id, user_id, property_id, rating, comment
+- **Payment**: id, booking_id, amount, status
+
+**Relationships:**
+- A user can have multiple bookings
+- A user can leave multiple reviews
+- A property can have multiple bookings and reviews
+- Each booking is linked to a payment
+
+## Feature Breakdown
+
+- **User Management**: Users can register, login, and manage their profiles.
+- **Property Management**: Owners can add, edit, and remove properties.
+- **Booking System**: Users can book properties for specific dates.
+- **Reviews & Ratings**: Users can leave reviews and ratings for properties.
+- **Payment Processing**: Users can complete payments securely for their bookings.
+
+## API Security
+
+- **Authentication**: Ensure users are who they say they are (e.g., JWT, session tokens)
+- **Authorization**: Control what users can access (owners vs regular users)
+- **Rate Limiting**: Prevent abuse of APIs
+- **Data Protection**: Encrypt sensitive data like passwords and payment info
+
+**Why it matters**: Protects user data, prevents fraudulent activity, and ensures secure transactions.
+
+## CI/CD Pipeline
+
+- **CI/CD** stands for Continuous Integration / Continuous Deployment.
+- **Purpose**: Automatically test and deploy changes to ensure the app is always functional.
+- **Tools**: GitHub Actions for automating tests and deployments, Docker for consistent environments.
+
+**Why it matters**: Reduces errors, speeds up development, ensures consistent builds across all environments.
